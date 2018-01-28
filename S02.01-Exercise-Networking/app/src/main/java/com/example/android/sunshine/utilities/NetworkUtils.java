@@ -65,8 +65,7 @@ public final class NetworkUtils {
      * @return The URL to use to query the weather server.
      */
     public static URL buildUrl(String locationQuery) {
-        // TODO (1) Fix this method to return the URL used to query Open Weather Map's API
-        return null;
+        return NetworkUtils.buildUrl(locationQuery);
     }
 
     /**
