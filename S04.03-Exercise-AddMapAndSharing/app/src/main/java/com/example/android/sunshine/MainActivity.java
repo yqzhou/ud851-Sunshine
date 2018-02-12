@@ -221,7 +221,18 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
+        if (id == R.id.open_map) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            String address = "2117 7th Ave, Seattle, WA";
+            Uri.Builder builder = new Uri.Builder();
+            builder.scheme("geo").path("0, 0").query(address);
+            Uri uri = builder.build();
+            intent.setData(uri);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
